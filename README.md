@@ -18,7 +18,7 @@ This is my personal website, built mainly using Python, HTML, CSS and Flask. It 
 ┃ ┃ ┣ 📜 contact.html  <br>
 ┃ ┃ ┣ 📜 home.html  <br>
 ┃ ┃ ┗ 📜 projects.html  <br>
-┃ ┣ 📜 __init__.py  <br>
+┃ ┣ 📜 `__init__.py`  <br>
 ┃ ┣ 📜 auth.py  <br>
 ┃ ┣ 📜 models.py  <br>
 ┃ ┗ 📜 views.py  <br>
