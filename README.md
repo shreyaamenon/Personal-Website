@@ -23,6 +23,7 @@ This is my personal website, built mainly using Python, HTML, CSS and Flask. It 
 ┃ ┣ 📜 `models.py`  <br>
 ┃ ┗ 📜 `views.py`  <br>
 ┣ 📜 `main.py` (Main Flask/Django file)  <br>
+┣ 📜 `requirements.txt`   <br>
 ┗ 📜 `README.md` (This file)  <br>
 
 ## 📩 Contact
