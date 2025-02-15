@@ -29,4 +29,4 @@ This is my personal website, built mainly using Python, HTML, CSS and Flask. It 
 ┗ 📜 `README.md` (This file)  <br>
 
 ## 📩 Contact
-If you have any questions, reach out to me at shreyamenon8@gmail.com or visit [shreyamenon.online].
+If you have any questions, reach out to me at shreyamenon8@gmail.com or find me on LinkedIn at [www.linkedin.com/in/shreyaamenon].
