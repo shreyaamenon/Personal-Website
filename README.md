@@ -6,7 +6,7 @@ This is my personal website, built mainly using Python, HTML, CSS and Flask. It 
 
 ## 🚀 Features
 - Responsive design for desktop
-- Hosted on [Render/GitHub Pages]
+- Hosted on Render/Github
 
 ## 📂 Folder Structure
 
