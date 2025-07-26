@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block title %}shreya menon{% endblock %}
+{% block content %}
+
+<nav>
+  <a href="/">home</a>
+  <a href="/projects">projects</a>
+  <a href="/workshop">workshop</a>
+  <a href="/contact" class="active">contact</a>
+</nav>
+
+<h1>contact me!</h1>
+<p class="subtitle">(or you can reach me at shreyamenon8@gmail.com)</p>
+
+<div class="form-wrapper">
+  <img src="/static/images/envelope-light.png" alt="envelope graphic" class="envelope-img" id="envelope" />
+  <div class="contact-form">
+    <form id="contact-form" action="https://formsubmit.co/shreyamenon8@gmail.com" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="type name here..." required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="type email here..." required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" placeholder="type message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+
+      <div id="success-popup" class="popup">
+        message sent successfully ✔
+        <span id="close-popup">&times;</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Unbounded', sans-serif;
+    background-color: white;
+    color: black;
+  }
+
+  html.dark-mode body {
+    background-color: black;
+    color: white;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin: 2rem 1rem 0.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    margin: 0 1rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #696969;
+    text-align: center;
+  }
+
+  .form-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    margin-top: 12rem;
+    margin-bottom: 4rem;
+  }
+
+  .envelope-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-30%);
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    z-index: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .envelope-img:hover {
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  @keyframes hoverBounce {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  html.dark-mode .envelope-img {
+    content: url('/static/images/envelope-dark.png');
+  }
+
+  .contact-form {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background-color: #A4AC86;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid black;
+  }
+
+  html.dark-mode .contact-form {
+    background-color: #656D4A;
+    border: 3px solid white;
+  }
+
+  form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  textarea {
+    font-family: 'Unbounded', sans-serif;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 2px solid #000000;
+    font-size: 0.9rem;
+    background: white;
+    color: black;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
+  }
+
+  button {
+    margin-top: 1.5rem;
+    font-family: 'Unbounded', sans-serif;
+    padding: 0.7rem 1.5rem;
+    border-radius: 1rem;
+    border: 2px solid #000000;
+    background-color: #90693C;
+    color: white;
+    font-size: 0.6rem;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+  }
+
+  button:hover {
+    filter: brightness(1.2);
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #A4AC86;
+    border: 2px solid black;
+    color: black;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .popup span {
+    margin-left: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    const popup = document.getElementById("success-popup");
+    const closeBtn = document.getElementById("close-popup");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        form.submit(); // Actually submit after showing popup
+      }, 1000);
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  });
+</script>
+{% endblock %}

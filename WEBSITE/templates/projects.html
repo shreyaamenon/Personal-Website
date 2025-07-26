@@ -1,0 +1,802 @@
+<!-- projects.html -->
+{% extends 'base.html' %}
+{% block title %}shreya menon{% endblock %}
+
+{% block extra_styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+{% endblock %}
+
+{% block content %}
+<nav>
+  <a href="/">home</a>
+  <a href="/projects" class="active">projects</a>
+  <a href="/workshop">workshop</a>
+  <a href="/contact">contact</a>
+</nav>
+
+<main class="projects-page">
+  <h1 class="projects-title">projects <span class="star">&#9733;</span></h1>
+  <p class="projects-subtitle">this is where i share all my past projects, what i'm currently working on, etc.</p>
+  <section class="project-section featured">
+    <h2 class="section-heading">featured projects ✧✷</h2> <!--------------- FEATURED PROJECTS -------------------->
+    <div class="card-wrapper featured-wrapper">
+      <div class="scroll-container">
+
+<!---------------------- PROJECT FIVE ------------------------->
+<div class="project-card">
+  <div class="project-info">
+    <h3 class="project-title">
+      Medical Assistant
+      <span class="project-open-wrapper">
+        <a class="project-open" onclick="openModal('project5-modal')" aria-label="open project">↗</a>
+        <span class="tooltip">open project details</span>
+      </span>
+    </h3>
+    <p class="project-desc">
+      Developed an RAG AI solution using medical manuals to reduce information overload, improving diagnostic accuracy, treatment efficiency, and patient outcomes through standardized care.
+    </p>
+    <div class="tag-container">
+      <span class="tag">Data Preparation</span>
+      <span class="tag">Chunking</span>
+      <span class="tag">Retriever</span>
+      <span class="tag">LLM</span>
+      <span class="tag">Prompt Engineering</span>
+    </div>
+  </div>
+  <div class="thumbnail">
+    <img src="/static/images/medical.jpg" alt="image" />
+  </div>
+</div>
+
+ <!---------------------- PROJECT SIX ------------------------->
+ <div class="project-card">
+  <div class="project-info">
+    <h3 class="project-title">
+      HelmNet
+      <span class="project-open-wrapper">
+        <a class="project-open" onclick="openModal('project6-modal')" aria-label="open project">↗</a>
+        <span class="tooltip">open project details</span>
+      </span>
+    </h3>
+    <p class="project-desc">
+      Developed an image classification model to categorize images into one of two classes: workers wearing safety helmets (With Helmet) and workers not wearing safety helmets (Without Helmet).
+    </p>
+    <div class="tag-container">
+      <span class="tag">Convolutional Neural Network</span>
+      <span class="tag">Transfer Learning</span>
+      <span class="tag">Data Augmentation</span>
+    </div>
+  </div>
+  <div class="thumbnail">
+    <img src="/static/images/helmets.jpg" alt="image" />
+  </div>
+</div>
+
+<!---------------------- PROJECT NINE ------------------------->
+<div class="project-card">
+  <div class="project-info">
+    <h3 class="project-title">
+      Nerveli Front End App
+      <span class="project-open-wrapper">
+        <a class="project-open" onclick="openModal('project9-modal')" aria-label="open project">↗</a>
+        <span class="tooltip">open project details</span>
+      </span>
+    </h3>
+    <p class="project-desc">
+      Helped develop a front-end application for Nerveli, a platform specifically for people with nerve pain. The app features a user-friendly interface, secure authentication, and a responsive design. 
+    </p>
+    <div class="tag-container">
+      <span class="tag">React Native</span>
+      <span class="tag">UI/UX</span>
+      <span class="tag">Mobile App Development</span>
+      <span class="tag">Android OS</span>
+    </div>
+  </div>
+  <div class="thumbnail">
+    <img src="/static/images/nerveli.jpg" alt="image" />
+  </div>
+</div>        
+
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section in-progress">
+    <h2 class="section-heading">in progress... ✧✷</h2> <!------------- IN PROGRESS PROJECTS --------------->
+    <div class="card-wrapper in-progress-wrapper">
+      <div class="scroll-container">
+        
+        <!---------------------- PROJECT ELEVEN ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              BranchLinker
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project11-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              A website that allows users to create their family trees by adding family members, relationships, and details. Users can also view their family tree in a graphical format.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Python</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/familytree.png" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT TWELVE ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              CoHabit
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project12-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              A roommate “pre-nup” builder mobile app that guides roommates through values-based questions and creates a living agreement. Can even set reminders for check-ins & see live statuses.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Python</span>
+              <span class="tag">React Native</span>
+              <span class="tag">TailwindCSS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/roommate.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT THIRTEEN ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Platformer Game
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project13-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              A 2D platformer game where players navigate through levels, collect items, and avoid enemies. The game will feature a variety of levels with increasing difficulty.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Python</span>
+              <span class="tag">Pygame</span>
+              <span class="tag">Game Development</span>
+              <span class="tag">2D Platformer</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/platform.jpg" alt="image" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section all-projects">
+    <h2 class="section-heading">all completed projects ✧✷</h2> <!----------- ALL PROJECTS --------------->
+    <div class="card-wrapper all-projects-wrapper">
+      <div class="scroll-container">
+
+        <!---------------------- PROJECT ONE ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              FoodHub
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project1-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Data analysis project to understand restaurant/cuisine demand, helping a food aggregator improve business strategy.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Python</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Seaborn</span>
+              <span class="tag">EDA</span>
+              <span class="tag">Univariate Analysis</span>
+              <span class="tag">Bivariate Analysis</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/foodhub.jpg" alt="image" />
+          </div>
+        </div>
+        
+        <!---------------------- PROJECT TWO ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Personal Loan Campaign
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project2-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Analyzed customer data to identify key traits influencing loan purchases and built a predictive model to help the bank target likely loan buyers, boosting marketing and conversions.
+            </p>
+            <div class="tag-container">
+              <span class="tag">EDA</span>
+              <span class="tag">Data Pre-processing</span>
+              <span class="tag">Model building - Decision Tree</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/loancampaign.png" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT THREE ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              EasyVisa
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project3-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Analyzed visa applicant data to build a predictive model that identifies key factors influencing visa approval & helping recommend whether an applicant’s profile should be certified or denied.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Bagging Classifier</span>
+              <span class="tag">Boosting Classifier</span>
+              <span class="tag">Stacking Classifier</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/easyvisa.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT FOUR ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Bank Customer Churn
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project4-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Analyzed customer data, built a neural network to help the operations team identify the customers that are more likely to churn, and provide recommendations on how to retain such customers.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Tensorflow</span>
+              <span class="tag">Keras</span>
+              <span class="tag">Neural Networks</span>
+              <span class="tag">Regularization</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/bankchurn.png" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT FIVE ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Medical Assistant
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project5-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Developed an RAG AI solution using medical manuals to reduce information overload, improving diagnostic accuracy, treatment efficiency, and patient outcomes through standardized care.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Data Preparation</span>
+              <span class="tag">Chunking</span>
+              <span class="tag">Retriever</span>
+              <span class="tag">LLM</span>
+              <span class="tag">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/medical.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT SIX ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              HelmNet
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project6-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Developed an image classification model to categorize images into one of two classes: workers wearing safety helmets (With Helmet) and workers not wearing safety helmets (Without Helmet).
+            </p>
+            <div class="tag-container">
+              <span class="tag">Convolutional Neural Network</span>
+              <span class="tag">Transfer Learning</span>
+              <span class="tag">Data Augmentation</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/helmets.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT SEVEN ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              RAG Clinical System
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project7-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Built a Retrieval-Augmented Generation (RAG) model to turn vast medical manuals into an interactive, AI-powered knowledge base for healthcare teams. The system quickly retrieves relevant guidelines and generates context-aware explanations.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Retrieval-Augmented Generation (RAG)</span>
+              <span class="tag">LLM Integration</span>
+              <span class="tag">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/ragmed.png" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT EIGHT ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              SFML Hangman Game
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project8-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Developed a simple hangman game using SFML in C++ for an animations class in college. The game features a graphical interface, word selection, and user input handling.
+            </p>
+            <div class="tag-container">
+              <span class="tag">C++</span>
+              <span class="tag">SFML</span>
+              <span class="tag">Graphics</span>
+              <span class="tag">Beginner Game Development</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/hangman.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT NINE ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Nerveli Front End App
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project9-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Helped develop a front-end application for Nerveli, a platform specifically for people with nerve pain. The app features a user-friendly interface, secure authentication, and a responsive design. 
+            </p>
+            <div class="tag-container">
+              <span class="tag">React Native</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Mobile App Development</span>
+              <span class="tag">Android OS</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/nerveli.jpg" alt="image" />
+          </div>
+        </div>
+
+        <!---------------------- PROJECT TEN ------------------------->
+        <div class="project-card">
+          <div class="project-info">
+            <h3 class="project-title">
+              Personal Portfolio Website
+              <span class="project-open-wrapper">
+                <a class="project-open" onclick="openModal('project10-modal')" aria-label="open project">↗</a>
+                <span class="tooltip">open project details</span>
+              </span>
+            </h3>
+            <p class="project-desc">
+              Developed this website as my personal portfolio using HTML/CSS. The site showcases my projects, skills, and contact information, with a responsive design and interactive elements.
+            </p>
+            <div class="tag-container">
+              <span class="tag">Python</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Web Development</span>
+            </div>
+          </div>
+          <div class="thumbnail">
+            <img src="/static/images/web.png" alt="image" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!------------------------------- POP-UP MODALS ALL PROJECTS ---------------------------------->
+
+<!----------------- Modal for Project 1 ---------------------->
+<div class="modal" id="project1-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project1-modal')">&times;</button>
+    
+    <div class="modal-thumbnail">
+      <img src="/static/images/foodhub.jpg" alt="thumbnail image" />
+    </div>
+        <h3 class="modal-title">FoodHub Data Analysis</h3>
+    <p class="modal-description">
+      I conducted a comprehensive exploratory data analysis (EDA) to uncover patterns, trends, and relationships in customer preferences related to various restaurants and cuisines. The goal was to gain a deeper understanding of the factors influencing customer choices, peak demand periods, popular food categories, and high-performing restaurants. This analysis would help the food aggregator company make data-driven decisions to optimize restaurant listings, personalize user recommendations, enhance delivery logistics, and identify opportunities for partnerships with trending or underserved cuisines. Ultimately, the insights derived from this EDA would support efforts to elevate the overall customer experience and drive strategic business growth.
+    </p>
+    
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Python</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Seaborn</span>
+        <span class="tag">EDA</span>
+        <span class="tag">Univariate Analysis</span>
+        <span class="tag">Bivariate Analysis</span>
+        <span class="tag">Business Recommendations</span>
+      </div>
+    
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/Foodhub_Data_Analysis_Project.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 2 ---------------------->
+<div class="modal" id="project2-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project2-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/loancampaign.png" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">All Life Personal Loan Campaign Data Analysis</h3>
+    <p class="modal-description">
+      This project involved analyzing customer data to identify key attributes that influence loan purchases. Through exploratory data analysis, I uncovered patterns around demographics, income, and customer behavior. Based on these insights, a predictive model was built to classify customers by their likelihood of purchasing a loan. The goal was to help the bank target high-potential customers more effectively, improve marketing strategies, and boost loan conversion rates.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">EDA</span>
+        <span class="tag">Data Pre-processing</span>
+        <span class="tag">Model building - Decision Tree</span>
+        <span class="tag">Model Performance Evaluation and Improvement</span>
+        <span class="tag">Business Recommendations</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/AllLife_Bank_DataAI_Project.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 3 ---------------------->
+<div class="modal" id="project3-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project3-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/easyvisa.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">EasyVisa Data Analysis</h3>
+    <p class="modal-description">
+      I analyzed the data of visa applicants to uncover patterns and key factors that significantly impact visa approval outcomes. Using these insights, I built a predictive model that can classify whether an applicant is likely to be certified or denied. This model will help streamline the visa evaluation process, reduce manual decision-making, and improve the accuracy and efficiency of approvals. Based on the most influential applicant attributes, I provided recommendations on what an ideal, certifiable profile looks like, helping both applicants and officials make more informed decisions.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">EDA</span>
+        <span class="tag">Data Pre-processing</span>
+        <span class="tag">Bagging Classifier</span>
+        <span class="tag">Boosting Classifier</span>
+        <span class="tag">Stacking Classifier</span>
+        <span class="tag">Hyperparameter Tuning</span>
+        <span class="tag">Business Insights</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/PythonAIML_Data_Project_EasyVisa.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 4 ---------------------->
+<div class="modal" id="project4-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project4-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/bankchurn.png" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">Bank Customer Churn Prediction Analysis</h3>
+    <p class="modal-description">
+      Analyzed customer data to identify behavioral and demographic patterns that contribute to customer churn. Developed a neural network model that accurately predicts which customers are at high risk of leaving, enabling the operations team to proactively address churn. The model  learned from various customer attributes—such as usage history, service interactions, satisfaction scores, and tenure—to classify churn probability. Alongside the model, I provided actionable insights and targeted retention strategies tailored to different customer segments.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">EDA</span>
+        <span class="tag">Data Pre-processing</span>
+        <span class="tag">Tensorflow</span>
+        <span class="tag">Keras</span>
+        <span class="tag">Artificial Neural Networks</span>
+        <span class="tag">Regularization</span>
+        <span class="tag">Business Insights</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/INN_Learner_Notebook_Full_code.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 5 ---------------------->
+<div class="modal" id="project5-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project5-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/medical.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">Medical Assistant RAG AI Model</h3>
+    <p class="modal-description">
+      Developed an AI-powered solution designed to address the issue of information overload in the healthcare industry by leveraging structured data from medical manuals. The system aims to support healthcare professionals by streamlining clinical decision-making, improving diagnostic precision, and optimizing treatment planning. By integrating standardized care practices into the AI model, the solution ensures consistency in medical recommendations while enabling faster access to critical information. Ultimately, this would lead to enhanced patient outcomes, reduced cognitive burden on physicians, and more efficient overall healthcare delivery.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Data Preparation</span>
+        <span class="tag">Chunking</span>
+        <span class="tag">Retriever</span>
+        <span class="tag">LLM</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">Fine tuning RAG</span>
+        <span class="tag">Embedding</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/Full_Code_NLP_RAG_Project_2%20(1).ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 6 ---------------------->
+<div class="modal" id="project6-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project6-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/helmets.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">HelmNet Safety Image Classifier</h3>
+    <p class="modal-description">
+      Developed an image classification model to categorize images into two distinct classes: workers wearing safety helmets (With Helmet) and workers not wearing safety helmets (Without Helmet).
+      This project focused on improving workplace safety monitoring by leveraging deep learning to automatically detect helmet usage in images. Using a convolutional neural network (CNN), the model was trained on a curated dataset of labeled images, incorporating techniques like data augmentation and transfer learning to improve performance and handle varied lighting, angles, and environments. The system aims to assist organizations in enforcing safety compliance, reducing workplace hazards, and ensuring that safety protocols are consistently followed in real time.
+    </p>
+      <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">EDA</span>
+        <span class="tag">Data Pre-processing</span>
+        <span class="tag">Convolutional Neural Network</span>
+        <span class="tag">Transfer Learning</span>
+        <span class="tag">Data Augmentation</span>
+        <span class="tag">Optimization</span>
+        <span class="tag">Business Insights</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/Data-Analysis-AIML-Mini-Projects/blob/main/HelmNet_Full_Code.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 7 ---------------------->
+<div class="modal" id="project7-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project7-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/ragmed.png" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">RAG Clinical Knowledge System</h3>
+    <p class="modal-description">
+      Built a Retrieval-Augmented Generation (RAG) model to turn vast medical manuals into an interactive, AI-powered knowledge base for healthcare teams. The system quickly retrieves relevant guidelines and generates context-aware explanations, reducing the time spent sifting through dense resources. This approach supports more confident diagnoses, faster treatment planning, and a more consistent standard of care, ultimately improving both provider workflow and patient experience.    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Data Preparation</span>
+        <span class="tag">Chunking</span>
+        <span class="tag">Retrieval-Augmented Generation (RAG)</span>
+        <span class="tag">LLM Integration</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">Fine tuning RAG</span>
+        <span class="tag">Embedding</span>
+        <span class="tag">Knowledge Retrieval</span>
+      </div>
+      <a href="https://github.com/shreyaamenon/RAG-AI-Model-Project/blob/main/RAG_AI_Model_Project.ipynb" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 8 ---------------------->
+<div class="modal" id="project8-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project8-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/hangman.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">SFML Hangman Game</h3>
+    <p class="modal-description">
+      Developed a simple hangman game using SFML in C++ for an animations class in college. The game features a graphical interface, word selection, and user input handling. It serves as a fun way to practice programming concepts while providing an interactive experience for users. The project showcases my ability to create engaging applications using C++ and SFML, demonstrating skills in game development, graphics rendering, and user interaction.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">C++</span>
+        <span class="tag">SFML</span>
+        <span class="tag">GIMP</span>
+        <span class="tag">Graphics</span>
+        <span class="tag">Game Development</span>
+        <span class="tag">User Interaction</span>
+      </div>
+      <a href="https://github.com/raphaeljayr/Computer-Graphics-Project" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div> 
+
+<!----------------- Modal for Project 9 ---------------------->
+<div class="modal" id="project9-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project9-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/nerveli.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">Nerveli App Development (Front End)</h3>
+    <p class="modal-description">
+      Helped develop the front-end of a mobile application with five teammates for Nerveli, a platform specifically for people with nerve pain. The app features a user-friendly interface, secure authentication, and a responsive design. It allows users to easily navigate through various sections, access resources, and manage their profiles. The project showcases skills in React Native development, UI/UX design, and mobile app development for Android OS. It aims to provide a seamless experience for users seeking support and information related to nerve pain management.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">React Native</span>
+        <span class="tag">UI/UX</span>
+        <span class="tag">Mobile App Development</span>
+        <span class="tag">Android OS</span>
+        <span class="tag">User Authentication</span>
+      </div>
+      <a href="https://github.com/jynyl22/Nerveli" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!----------------- Modal for Project 10 ---------------------->
+<div class="modal" id="project10-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project10-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/web.png" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">Personal Portfolio Website</h3>
+    <p class="modal-description">
+      Developed this website as my personal portfolio using HTML/CSS. The site showcases my projects, skills, and contact information, with a responsive design and interactive elements. It serves as a platform to highlight my work, demonstrate my web development skills, and provide potential employers or collaborators with an overview of my capabilities. The project reflects my commitment to creating a professional online presence and my ability to build functional and visually appealing web applications.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Python</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Web Development</span>
+        <span class="tag">Responsive Design</span>
+      </div>
+      <a href="www.shreyamenon.online" class="modal-button" target="_blank">view project ↗</a>
+    </div>
+  </div>
+</div>
+
+<!------------------- Modal for Project 11 --------------------------->
+<div class="modal" id="project11-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project11-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/familytree.png" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">BranchLinker - Family Tree Builder</h3>
+    <p class="modal-description">
+      BranchLinker is a web application that allows users to create and visualize their family trees. Users can add family members, define relationships, and view their family tree in a graphical format. The application aims to help users explore their ancestry and understand their family history better.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Python</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Web Development</span>
+        <span class="tag">Family Tree</span>
+      </div>
+      <a href="" class="modal-button" target="_blank">project not available yet</a>
+    </div>
+  </div>
+</div>
+
+<!------------------- Modal for Project 12 --------------------------->
+<div class="modal" id="project12-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project12-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/roommate.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">CoHabit - Roommate Agreement Builder</h3>
+    <p class="modal-description">
+      CoHabit is a mobile application designed to help roommates create and manage their living agreements. The app guides users through values-based questions to establish shared expectations and responsibilities. It allows roommates to set reminders for check-ins and view live statuses of their roommates, promoting better communication and harmony in shared living spaces.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Python</span>
+        <span class="tag">React Native</span>
+        <span class="tag">TailwindCSS</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">Mobile App Development</span>
+      </div>
+      <a href="" class="modal-button" target="_blank">project not available yet</a>
+    </div>
+  </div>
+</div>
+
+<!------------------- Modal for Project 13 --------------------------->
+<div class="modal" id="project13-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('project13-modal')">&times;</button>
+    <div class="modal-thumbnail">
+      <img src="/static/images/platform.jpg" alt="thumbnail" />
+    </div>
+    <h3 class="modal-title">Platformer Game</h3>
+    <p class="modal-description">
+      Developing a 2D platformer game where players navigate through levels, collect items, and avoid enemies. The game features a variety of levels with increasing difficulty, providing an engaging and challenging experience for players. I decided to build a simple game due to my interest in game development, as well as to gain skills in level design, character movement, and collision detection.
+    </p>
+    <div class="modal-footer">
+      <div class="modal-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pygame</span>
+        <span class="tag">Sprite Design</span>
+        <span class="tag">Game Development</span>
+        <span class="tag">2D Platformer</span>
+        <span class="tag">Level Design</span>
+      </div>
+      <a href="" class="modal-button" target="_blank">project not available yet</a>
+    </div>
+  </div>
+</div> 
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  function openModal(id) {
+  document.getElementById(id).classList.add('active');
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+}
+</script>
+{% endblock %}

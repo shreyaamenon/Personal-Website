@@ -1,0 +1,553 @@
+/* =====================================
+   IMPORT FONTS & ROOT VARIABLES
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+:root {
+  --seal-brown: #582F0E;
+  --lion: #A68A64;
+  --bone: #D3D6C2;
+  --sage: #A4AC86;
+  --reseda-green: #656D4A;
+  --ebony: #414833;
+  --black-olive: #333D29;
+  --rosy-brown: #DD9795;
+
+  --font-main: 'Unbounded', sans-serif;
+
+  --bg-color: white;
+  --text-color: black;
+  --box-border-color: black;
+
+  --pill-bg: var(--sage);
+  --pill-hover: var(--lion);
+}
+
+html.dark-mode {
+  --bg-color: black;
+  --text-color: white;
+  --box-border-color: white;
+  --pill-bg: var(--reseda-green);
+  --pill-hover: var(--lion);
+}
+
+
+
+/* =====================================
+   BODY
+===================================== */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+nav {
+  background-color: var(--black-olive);
+  color: var(--ivory);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--sage);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  color: ivory;
+  transform: scale(1.05);
+}
+
+nav a.active {
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* =====================================
+   DARK MODE TOGGLE
+===================================== */
+.theme-toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 0.7rem 0 1.5rem;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--sage);
+  border-radius: 34px;
+  transition: 0.4s;
+  border: 1px solid black;
+  box-shadow: 0 0 0 1px black;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3.5px;
+  bottom: 2.5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  border: 1px solid black;
+}
+
+input:checked + .slider {
+  background-color: var(--ebony);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.theme-toggle-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-main);
+  color: var(--text-color);
+}
+
+/* ========== ADD REMAINING STYLES HERE ========== */
+/* You can paste the rest of your layout, typography, carousel, cards, footer, etc. here.
+   They don’t need any dark mode changes unless you want to map more colors to variables. */
+
+
+/* =====================================
+   HOMEPAGE LAYOUT
+===================================== */
+.homepage-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.home-left, .home-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.home-left {
+    max-width: 60%;
+  }
+  
+
+.home-right {
+  align-items: flex-start;
+  padding-top: -3rem;
+  padding-left: -10rem;
+}
+
+
+/* =====================================
+   TEXT STYLES
+===================================== */
+.home-title {
+  font-family: var(--font-title);
+  font-size: 4.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  display: block;
+  margin-left: 3rem;
+}
+
+html.dark-mode .home-title {
+  color: white;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.bold-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: bold;
+  font-size: clamp(2.7rem, 8vw, 5rem);
+  color: var(--lion);
+  text-shadow:
+  3px 3px 0 #000,
+  -3px 3px 0 #000,
+   3px -3px 0 #000,
+  -3px -3px 0 #000,
+   3px 0px 0 #000,
+   0px 3px 0 #000,
+  -3px 0px 0 #000,
+   0px -3px 0 #000,
+   4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .bold-name {
+  color: var(--lion);
+  text-shadow:
+    2px 2px 0 #fff,
+   -2px 2px 0 #fff,
+    2px -2px 0 #fff,
+   -2px -2px 0 #fff,
+    2px 0px 0 #fff,
+    0px 2px 0 #fff,
+   -2px 0px 0 #fff,
+    0px -2px 0 #fff,
+    4px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.plain-text {
+  color: black;
+  text-shadow: 2px 2px 2px black;
+}
+
+html.dark-mode .plain-text {
+  color: var(--text-color);
+  text-shadow: 2px 2px 2px white;
+}
+
+.subtitle {
+  font-weight: 550;
+  font-size: 1.4rem;
+  margin-top: -2.5rem;
+  margin-left: 22rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-text {
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-left: 1rem;
+  max-width: 90%;
+}
+
+.full-width-box {
+    width: 100%; 
+    margin-top: -0.5rem;
+    text-align: left;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-left: 2rem;
+    max-width: 95%;
+  }
+  
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+
+/* =====================================
+   BUTTONS & LINKS
+===================================== */
+.button {
+  background-color: var(--seal-brown);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  margin-left: 30rem;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: var(--lion);
+  transform: scale(1.05);
+}
+
+
+/* =====================================
+   SKILL CARD REWORK
+===================================== */
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .skill-box {
+    border: 2.2px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+    height: 100px;
+    padding: 1rem 2rem 2.5rem;
+    text-align: center;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+  }
+
+  html.dark-mode .skill-box {
+    border: 1px solid white;
+  }
+
+  #languages {
+    background-color: rgba(211, 214, 194, 0.5); /* bone */
+  }
+  #ml-frameworks {
+    background-color: rgba(166, 138, 100, 0.75); /* lion */
+  }
+  #other {
+    background-color: rgba(51, 61, 41, 0.85); /* ebony */
+  }
+  #learning {
+    background-color: rgba(88, 47, 14, 0.9); /* seal brown */
+  }
+  
+  .skill-heading {
+    font-weight: 525;
+    font-size: 1.6rem;
+    margin-top: 0.1rem;
+    margin-bottom: 1.5rem; 
+    color: black;
+  }
+  
+html.dark-mode .skill-heading {
+    color: var(--text-color);
+}
+  .icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    margin-top: -1rem;
+  }
+  
+  .icon-block img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+  
+  .icon-block span {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  
+  .tall-icon {
+    transform: scale(0.65) translateY(-40px) translateX(-40px);
+    display: block;
+    margin: 0 auto 0.2rem;
+  }
+
+  .lift-label {
+    transform: translateY(-40px);
+    display: block;
+  }
+  
+  .sql-mips-label {
+    transform: translateY(5px);
+    display: block;
+  }
+
+  .pushdown-label {
+    transform: translateY(10px);
+    display: block;
+  }
+
+/* =====================================
+   CAROUSEL
+===================================== */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  margin-top: 10rem;
+  margin-right: 4rem;
+  transform: translateX(4rem);
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-outer {
+  width: 400px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin: 3rem auto;
+  border-radius: 50%;
+  border: 4px solid var(--seal-brown);
+  position: relative;
+  mask-image: radial-gradient(ellipse 100% 100% at center, black 100%, transparent 100%);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel-image {
+  width: 400px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--seal-brown);
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.3);
+  color: var(--rosy-brown);
+}
+
+.carousel-btn.left {
+    left: -2.0rem; /* or whatever value shifts it left */
+  }
+  
+  .carousel-btn.right {
+    right: -2.0rem; /* or similar for right side */
+  }
+  
+
+/* SOCIALS SECTION */
+.socials-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  
+  .socials-box {
+    background-color: rgba(164, 172, 134, 0.5); /* sage with 50% opacity */
+    border: 2.5px solid black;
+    border-radius: 25px;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 85%;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+  }
+  
+  html.dark-mode .socials-box {
+    border: 1px solid white;
+  }  
+
+  .social-icon {
+    font-size: 2.2rem;
+    color: var(--black-olive);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+    color: var(--rosy-brown); /* optional hover color */
+  }
+  
+/* =====================================
+   FOOTER
+===================================== */
+footer {
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    padding: 0.2rem;
+    font-size: 0.5rem;
+    margin-top: auto;
+  }
+  html.dark-mode footer {
+    background-color: transparent;
+    color: white;
+  }
+  
+
+/* =====================================
+   RESPONSIVE STYLES
+===================================== */
+@media (max-width: 768px) {
+  .homepage-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-left, .home-right {
+    width: 100%;
+  }
+}

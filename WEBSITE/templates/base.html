@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Home{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block extra_styles %}{% endblock %}
+
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav>
+    <a href="/">home</a>
+    <a href="/projects">projects</a>
+    <a href="/workshop">workshop</a>
+    <a href="/contact">contact</a>
+  </nav>
+
+  <div class="theme-toggle-wrapper">
+    <div class="theme-toggle-label">(toggle for dark mode)</div>
+    <label class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+
+  <!-- Left sidebar -->
+  <div class="side-bar left-bar"></div>
+
+  <!-- Right sidebar -->
+  <div class="side-bar right-bar"></div>
+
+  <!-- Main content area -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Shreya Menon. All rights reserved.</p>
+  </footer>
+{% block scripts %}
+
+<script>
+    // Theme toggle script
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("dark-mode");
+        toggle.checked = true;
+      }
+
+      toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+          html.classList.add("dark-mode");
+          localStorage.setItem("theme", "dark");
+        } else {
+          html.classList.remove("dark-mode");
+          localStorage.setItem("theme", "light");
+        }
+      });
+    });
+  </script>  
+
+{% endblock %}
+</body>
+</html>
+
+

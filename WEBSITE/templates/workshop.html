@@ -1,0 +1,338 @@
+<!-- workshop.html -->
+{% extends 'base.html' %}
+{% block title %}shreya menon{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop ✩</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+  <nav>
+    <a href="/">home</a>
+    <a href="/projects">projects</a>
+    <a href="/workshop" class="active">workshop</a>
+    <a href="/contact">contact</a>
+  </nav>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Unbounded', sans-serif;
+      background: white;
+      color: black;
+      overflow-y: auto;
+    }
+    html.dark-mode body {
+      background: black;
+      color: white;
+    }
+
+    .workshop-title {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-top: 3rem;
+    }
+    .workshop-subtitle {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #696969;
+      margin-bottom: 3rem;
+      margin-top: -1.2rem;
+      font-weight: 600;
+    }
+    .section {
+      margin: 2rem 1rem;
+      margin-left: 2rem;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+    }
+    .note-card {
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      border: 2px solid black;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 150px; /* adjust height as needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .note-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .note-card h3 {
+      margin: 0 0 0.5rem;
+    }
+    .note-card p {
+      margin: 0;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: inherit;
+    }
+
+    .read-more:hover {
+  transform: translateX(4px);
+  color: #ffffff; /* or any highlight color */
+}
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.2rem;
+      border: 2px solid black;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+    
+      .highlight {
+    background-color: #E0E096; /* soft yellow highlight */
+    padding: 0 4px;
+    border-radius: 2px;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    html.dark-mode .note-card,
+    html.dark-mode .modal-content {
+      border-color: white;
+    }
+
+    /* Color styles */
+    .sage { background-color: #A4AC86; color: black; }
+    .reseda { background-color: #656D4A; color: black; }
+    .ebony { background-color: #414833; color: white; }
+    .black-olive { background-color: #333D29; color: white; }
+
+    .tan { background-color: #D1B89B; color: black; }
+    .lion { background-color: #A68A64; color: black; }
+    .raw-umber { background-color: #90693C; color: black; }
+    .seal { background-color: #582F0E; color: white; }
+  </style>
+</head>
+
+<body>
+  <h1 class="workshop-title">my workshop ☻</h1>
+  <p class="workshop-subtitle">this is where i share my ongoing notes, experiments, and things i’m learning or building just for fun.</p>
+  
+  <section class="section">
+    <h2>experiments & mini builds</h2> <!---------------------- EXPERIMENTS AND MINI BUILDS -------------------------->
+      <div class="card-grid">
+        <!---------------- EXPERIMENT ONE ------------------------->
+        <div class="note-card tan" onclick="openModal('modal-a')">
+          <h3>Quote Generator Widget</h3>
+          <p>A small app that fetches random quotes and animates them.</p>
+          <span class="read-more">read more ↗</span>
+        </div>
+        <!---------------- EXPERIMENT TWO ------------------------->
+        <div class="note-card raw-umber" onclick="openModal('modal-b')">
+          <h3>Color Palette Picker</h3>
+          <p>Click to copy hex codes from different color palettes for convenience. Create artistic projects faster.</p>
+          <span class="read-more">read more ↗</span>
+        </div>
+        <!---------------- EXPERIMENT THREE ------------------------->
+      <div class="note-card tan" onclick="openModal('modal-c')">
+        <h3>Simple Weather Dashboard</h3>
+        <p>A little dashboard that shows the current weather in your city using a free API.</p>
+        <span class="read-more">read more ↗</span>
+      </div>
+    </div>
+    </section>
+  
+  <section class="section">
+    <h2>notes & learnings</h2> <!---------------------- NOTES AND LEARNINGS -------------------------->
+    <div class="card-grid">
+      <!---------------- NOTE CARD ONE ------------------------->
+      <div class="note-card sage" onclick="openModal('modal-1')">
+        <h3>What Overfitting Really Means</h3>
+        <p>A simple explanation and how I stopped confusing it with just “a good model."</p>
+        <span class="read-more">read more ↗</span>
+      </div>
+      <!---------------- NOTE CARD TWO ------------------------->
+      <div class="note-card reseda" onclick="openModal('modal-2')">
+        <h3>Understanding Data Leakage</h3>
+        <p>
+          A overview of what data leakage is and why it's important to avoid in ML models
+        </p>
+        <span class="read-more">read more ↗</span>
+      </div>
+      <!---------------- NOTE CARD THREE ------------------------->
+      <div class="note-card sage" onclick="openModal('modal-3')">
+        <h3>What I Learned About Precision and Recall</h3>
+        <p>
+          A simple explanation of precision and recall, and how I remember what each one means.
+        </p>
+        <span class="read-more">read more ↗</span>
+      </div>
+      <!---------------- NOTE CARD FOUR ------------------------->
+      <div class="note-card reseda" onclick="openModal('modal-4')">
+        <h3>Confusion About Regularization</h3>
+        <p>
+          An explanation of regularization and why it's important in machine learning models.
+        </p>
+        <span class="read-more">read more ↗</span>
+      </div>
+      <!---------------- NOTE CARD FIVE ------------------------->
+      <div class="note-card reseda" onclick="openModal('modal-5')">
+        <h3>Train-Test Split Order Matters</h3>
+        <p>
+          Something I learned was really important when working with models.
+        </p>
+        <span class="read-more">read more ↗</span>
+      </div>
+  </section>
+
+  <!---------------------------------------------- ALL MODALS -------------------------------------------------->
+  
+  <!----------- NOTE CARD ONE -------------->  
+  <div class="modal" id="modal-1">
+    <div class="modal-content sage">
+      <span class="close" onclick="closeModal('modal-1')">&times;</span>
+      <p>
+        Overfitting always came across as a vague buzzword to me at first. I assumed it just meant the model was extremely accurate, which I thought was the entire goal.
+      </p>
+      <p>
+        But in class, I learned it’s more nuanced than that. An <span class="highlight">overfit model</span> is like a student who memorizes every single line of the textbook but struggles to answer questions that are even slightly different from the examples they studied. The model essentially <span class="highlight">memorizes the training data instead of learning the patterns behind it</span>, which makes it perform poorly when it encounters anything new.
+      </p>
+      <p>
+        The main ways to address overfitting are actually straightforward: <span class="highlight">provide the model with more diverse data</span>, <span class="highlight">simplify its structure so it can’t memorize every detail</span>, or <span class="highlight">apply regularization techniques to control complexity</span>. The goal is to help the model understand the underlying concepts in the data — not just store every tiny detail it has seen before.
+      </p>
+      </p>
+    </div>
+  </div>
+
+  <!----------- NOTE CARD TWO -------------->
+  <div class="modal" id="modal-2">
+    <div class="modal-content reseda">
+      <span class="close" onclick="closeModal('modal-2')">&times;</span>
+      <p><span class="highlight">Data leakage</span> happens when information from outside the training dataset sneaks into the model in a way that should not happen. This can make the model look far more accurate during training and validation than it really is. For example, if a model predicting credit risk accidentally has access to a column that directly indicates whether someone defaulted, it will “cheat” and use that instead of learning real patterns.
+      </p>
+      <p>
+        While working on a small project, I realized how easy it is to overlook leakage. Even simple mistakes like splitting data after preprocessing can let information leak between the training and test sets. It became clear that preventing leakage means <span class="highlight">carefully reviewing data sources, the order of processing steps, and which features are used, so the model only learns from information it would realistically have in the real world.</span>
+      </p>
+    </div>
+  </div>
+
+  <!----------- NOTE CARD THREE -------------->
+  <div class="modal" id="modal-3">
+    <div class="modal-content sage">
+      <span class="close" onclick="closeModal('modal-3')">&times;</span>
+      <p>Precision and recall were two terms I mixed up for a long time. <span class="highlight">Precision</span> is about how many of the model’s positive predictions were actually correct, while <span class="highlight">recall</span> measures how many of the true positives the model successfully found. These metrics are especially important when false positives or false negatives have very different consequences.
+      </p>
+      <p>
+        I remember the difference by thinking of <span class="highlight">precision as “how precise is the model’s positive predictions?”</span> and <span class="highlight">recall as “how well does the model recall the true positives?”</span> This helps me keep them straight in my mind.
+        While experimenting with a classification project, I found that focusing on only accuracy could hide these details. A model might have been “accurate,” but it was missing important cases or flagging too many incorrect ones. Looking at precision and recall together finally made it easier to understand the trade-offs and choose the right balance for the problem.
+        </p>
+    </div>
+  </div>
+
+  <!----------- NOTE CARD FOUR -------------->
+  <div class="modal" id="modal-4">
+    <div class="modal-content reseda">
+      <span class="close" onclick="closeModal('modal-4')">&times;</span>
+      <p>
+        <span class="highlight">Regularization</span> sounded complicated when I first heard it mentioned in class. At its core, 
+        <span class="highlight">it is a technique used to prevent overfitting by adding a penalty to overly complex models.</span>
+        This penalty discourages the model from relying too heavily on any one feature or memorizing small quirks in the training data.
+      </p>
+      <p>
+        I used to think of regularization as just another math trick, but it clicked when I realized it’s about keeping the model focused on the most important patterns. 
+        It’s like a coach telling an athlete to avoid unnecessary movements and focus on the fundamentals. 
+        In practice, I found that using L1 or L2 regularization can help the model generalize better by keeping it from getting distracted by noise in the data.
+        So, in one of my projects, using L1 and L2 regularization finally made sense. <span class="highlight">L1 tends to push some feature weights to zero, essentially performing feature selection, while L2 shrinks weights more evenly.</span> 
+        It showed me how regularization can keep a model focused on the general patterns rather than every minor fluctuation in the data.
+      </p>
+    </div>
+  </div>
+
+  <!----------- NOTE CARD FIVE -------------->
+  <div class="modal" id="modal-5">
+    <div class="modal-content reseda">
+      <span class="close" onclick="closeModal('modal-5')">&times;</span>
+      <p>
+        When I first started working with datasets, I sometimes used to split the data into train and test sets after normalizing or encoding it. 
+        I later learned that <span class="highlight">this can create problems</span>, because it allows information from the test set to influence how the training data is processed.
+      </p>
+      <p>
+        The right way to do it is to <span class="highlight">split the data first</span>, then apply any transformations separately to the training and test sets. This way, the model only learns from the training data and is evaluated on truly unseen data. 
+        I learned this the hard way when I noticed that my model performed well on the test set, but when I tried it on new data, it didn’t do as well. 
+        It turned out that the test data had influenced the preprocessing steps, leading to overly optimistic results.
+        In a later project, I finally got into the habit of splitting the data before doing any transformations. 
+        This way, the test data truly stays unseen until evaluation, and the model’s performance is a fair reflection of how it will handle real-world data it has never seen.
+      </p>
+    </div>
+  </div>
+
+  <!----------- EXPERIMENT ONE -------------->
+  <div class="modal" id="modal-a">
+    <div class="modal-content tan">
+      <span class="close" onclick="closeModal('modal-a')">&times;</span>
+      <p>Quote generator app info not added yet...</p>
+    </div>
+  </div>
+
+  <!----------- EXPERIMENT TWO ------------->
+  <div class="modal" id="modal-b">
+    <div class="modal-content raw-umber">
+      <span class="close" onclick="closeModal('modal-b')">&times;</span>
+      <p>Palette picker app details not added yet...</p>
+    </div>
+  </div>
+
+  <!----------- EXPERIMENT THREE ------------->
+  <div class="modal" id="modal-c">
+    <div class="modal-content tan">
+      <span class="close" onclick="closeModal('modal-c')">&times;</span>
+      <p>Weather dashboard details not added yet...</p>
+    </div>
+  </div>  
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+</body>
+</html>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+{% endblock %}

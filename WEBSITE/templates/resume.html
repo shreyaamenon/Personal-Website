@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>shreya menon</title>
+  <!-- Unbounded font -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Unbounded', sans-serif;
+      background-color: #656D4A;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem 0.8rem 2rem;
+      box-sizing: border-box;
+    }
+
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      color: #333D29; 
+    }
+
+    .resume-title {
+      margin: 0 auto;
+      font-size: 2.2rem;
+      font-weight: 600;
+      text-align: center;
+      color: #D3D6C2;
+      text-shadow:
+        3px 3px 0 #000,
+        -3px 3px 0 #000,
+        3px -3px 0 #000,
+        -3px -3px 0 #000,
+        3px 0px 0 #000,
+        0px 3px 0 #000,
+        -3px 0px 0 #000,
+        0px -3px 0 #000,
+        4px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .pdf-wrapper {
+      margin: 1rem auto 2rem;
+      width: 80%;
+      height: 80vh;
+      border: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a class="back-btn" href="/">&larr; back</a>
+    <h1 class="resume-title">Resume</h1>
+    
+    <div style="width: 60px;"></div> <!-- spacer to center title -->
+  </div>
+  <p>last updated: 7/26/2025</p>
+  <div class="pdf-wrapper">
+    <iframe src="{{ url_for('static', filename='pdf/ShreyaMenonAIMLEngineer.pdf') }}"></iframe>
+  </div>
+</body>
+</html>

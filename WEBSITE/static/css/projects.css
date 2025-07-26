@@ -1,0 +1,442 @@
+/* =====================================
+   PROJECTS PAGE STYLES
+===================================== */
+
+/* --- Border Color Variable Setup --- */
+:root {
+    --outline-color: black;
+  }
+  html.dark-mode {
+    --outline-color: white;
+  }
+  
+  .projects-page {
+    padding: 2rem 2rem 4rem 3.5rem;
+  }
+  
+  .projects-section {
+    margin-bottom: 3rem;
+  }
+  
+  .projects-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-left: 0.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .projects-subtitle {
+    margin: 0 1rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #696969;
+    text-align: center;
+    margin-top: -1.2rem;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+    margin: 3.5rem 0 1rem 0.25rem;
+  }
+  
+  /* === Shared Scroll Container Styles === */
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+  }
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* =====================================
+     Featured Projects Styles
+  ===================================== */
+  .featured .card-wrapper {
+    background-color: #A68A64; /* lion */
+    border: 2.5px solid var(--outline-color);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+  }
+  .featured .project-card {
+    background-color: #D3D6C2; /* bone */
+    border: 2.5px solid var(--outline-color);
+  }
+  .featured .project-title,
+  .featured .project-desc {
+    color: black;
+  }
+  .featured .tag {
+    background-color: #656D4A; /* reseda green */
+    color: white;
+    border: 1px solid black;
+  }
+  
+  /* =====================================
+     In Progress Projects Styles
+  ===================================== */
+  .in-progress .card-wrapper {
+    background-color: #90693C; /* raw umber */
+    border: 2.5px solid var(--outline-color);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+  }
+  .in-progress .project-card {
+    background-color: #A4AC86; /* sage */
+    border: 2.5px solid var(--outline-color);
+  }
+  .in-progress .project-title,
+  .in-progress .project-desc {
+    color: black;
+  }
+  .in-progress .tag {
+    background-color: #414833; /* ebony */
+    color: white;
+    border: 1px solid black;
+  }
+  
+  /* =====================================
+     All Projects Styles
+  ===================================== */
+  .all-projects .card-wrapper {
+    background-color: #582F0E; /* seal brown */
+    border: 2.5px solid var(--outline-color);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+  }
+  .all-projects .project-card {
+    background-color: #656D4A; /* reseda green */
+    border: 2.5px solid var(--outline-color);
+  }
+  .all-projects .project-title,
+  .all-projects .project-desc {
+    color: white;
+  }
+  .all-projects .tag {
+    background-color: #A4AC86; /* sage */
+    color: black;
+    border: 1px solid black;
+  }
+  
+  /* =====================================
+     Project Card Layout
+  ===================================== */
+  .project-card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    min-width: 500px;
+    max-width: 500px;
+    transition: background-color 0.3s ease;
+  }
+  .project-card:hover {
+    filter: brightness(1.04);
+  }
+  
+  /* =====================================
+     Project Card Content
+  ===================================== */
+  .project-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* arrow button next to project title */
+  .project-open-wrapper {
+    font-size: 1.3rem;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+/* Tooltip bubble */
+.project-open-wrapper .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    position: absolute;
+    z-index: 10;
+    bottom: 105%; /* position it above the arrow */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.6rem;
+    font-weight: normal;
+    transition: opacity 0.2s ease;
+    border: 1px solid black;
+  }
+  
+  .project-open-wrapper .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    z-index: 1;
+  }
+  
+  .project-open-wrapper .tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    z-index: 0;
+  }  
+  
+  /* Show on hover */
+  .project-open-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Dark mode tooltip */
+  html.dark-mode .project-open-wrapper .tooltip {
+    background-color: white;
+    color: black;
+  }
+  
+  html.dark-mode .project-open-wrapper .tooltip::after {
+    border-color: white transparent transparent transparent;
+  }
+
+  .project-open-wrapper:hover {
+    transform: scale(1.2);
+    color: #DD9795; /* rosy brown hover */
+  }
+  
+  html.dark-mode .project-open-wrapper {
+    color: white;
+  }
+  
+  html.dark-mode .project-open-wrapper:hover {
+    color: #DD9795; /* rosy brown hover in dark mode */
+  }
+  
+  
+  .project-info {
+    flex-grow: 1;
+    padding-right: 1rem;
+  }
+  .project-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .project-desc {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* =====================================
+     Tags
+  ===================================== */
+  .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+  .tag:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* =====================================
+     Thumbnail
+  ===================================== */
+  .thumbnail {
+    width: 120px;
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid black;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0; 
+    flex-grow: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+ 
+  /* =============================
+   Modal Styling
+============================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D3D6C2; /* bone */
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 900px;
+    padding: 2.5rem;
+    border: 2px solid black;
+    box-shadow: 0 0 0 2px black;
+    color: black;
+  }
+  
+  html.dark-mode .modal {
+    background-color: #333D29; /* dark olive green */
+    border-color: white;
+    color: white;
+  }
+  
+  .modal.active {
+    display: block;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.5rem;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    color: #DD9795; /* rosy brown */
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* keep title + description left-aligned by default */
+  }  
+  
+  .modal-thumbnail {
+    width: 100%;
+    height: 180px;
+    background-color: #dcdcdc;
+    border-radius: 1rem;
+    border: 1px solid black;
+    margin-bottom: 1.5rem;
+    padding: 0; /* make sure no space inside */
+  }
+  
+    html.dark-mode .modal-thumbnail {
+        border: 1px solid white;
+    }
+    .modal-thumbnail img {
+      width: 100%;
+      height: 100%;
+      display: block;       /* prevent extra spacing */
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  
+  .modal-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .modal-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0rem;
+  }
+
+  .modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .modal-tags .tag {
+    background-color: #656D4A;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+    pointer-events: auto;
+    cursor: default;
+  }
+  
+  html.dark-mode .modal-tags .tag {
+    border: 1px solid white;
+  }
+
+  .modal-tags .tag:hover {
+    transform: translateY(-3px);
+  }
+  
+  .modal-button {
+    background-color: #A68A64; /* lion */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1.5rem auto 0 auto;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    border: 2px solid black;
+  }
+  
+  html.dark-mode .modal-button {
+    border: 2px solid white;
+  }
+
+  .modal-button:hover {
+    filter: brightness(1.1);
+  }
+  
+  
+  
